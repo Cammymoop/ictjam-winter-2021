@@ -7,6 +7,9 @@ func _ready() -> void:
 		var toggle = get_node("PanelContainer/VBoxContainer/HBoxContainer2/CheckButton")
 		toggle.pressed = false
 	
+	if OS.has_feature("HTML5"):
+		get_node("PanelContainer/VBoxContainer/HBoxContainer/Button4").queue_free()
+	
 	get_node("PanelContainer/VBoxContainer/HBoxContainer/Button").grab_focus()
 
 func _process(_delta: float) -> void:
