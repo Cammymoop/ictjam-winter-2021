@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/blast.ogg-0857ec9129a617e60a33935d9b490def.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/blast.ogg"
+dest_files=[ "res://.import/blast.ogg-0857ec9129a617e60a33935d9b490def.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

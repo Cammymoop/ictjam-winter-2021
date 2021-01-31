@@ -1,0 +1,254 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://assets/img/dragon1.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/dragon2.png" type="Texture" id=2]
+[ext_resource path="res://src/Dragon.gd" type="Script" id=3]
+[ext_resource path="res://src/AnimationPlayer.gd" type="Script" id=4]
+[ext_resource path="res://scenes/FireEffect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/dragon_phys_material.tres" type="PhysicsMaterial" id=6]
+[ext_resource path="res://assets/img/dragon3.png" type="Texture" id=7]
+[ext_resource path="res://assets/sfx/blast.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/sfx/fire_low.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/sfx/burst.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/img/dragon5.png" type="Texture" id=11]
+[ext_resource path="res://assets/sfx/die.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/img/dragon6.png" type="Texture" id=13]
+[ext_resource path="res://assets/sfx/music.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/img/dragon_red2.png" type="Texture" id=15]
+[ext_resource path="res://assets/img/dragon_red3.png" type="Texture" id=16]
+[ext_resource path="res://assets/img/dragon_red6.png" type="Texture" id=17]
+[ext_resource path="res://assets/img/dragon_red1.png" type="Texture" id=18]
+[ext_resource path="res://assets/img/dragon_red5.png" type="Texture" id=19]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 11.2165
+height = 35.0305
+
+[sub_resource type="Animation" id=2]
+resource_name = "Breath"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("dragon1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("dragon2:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 18 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Breath2"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/path = NodePath("dragon1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("dragon2:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Death"
+tracks/0/type = "value"
+tracks/0/path = NodePath("dragon1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("dragon2:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 19 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath("dragon1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("dragon2:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 16 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Smile"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("dragon1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("dragon2:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 17 ) ]
+}
+
+[node name="Dragon" type="RigidBody2D"]
+z_index = -1
+collision_layer = 2
+mode = 2
+physics_material_override = ExtResource( 6 )
+continuous_cd = 2
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 3 )
+game_speed = 1.4
+fire = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="dragon1" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+
+[node name="dragon2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 16 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Breath = SubResource( 2 )
+anims/Breath2 = SubResource( 5 )
+anims/Death = SubResource( 6 )
+anims/Idle = SubResource( 4 )
+anims/Smile = SubResource( 7 )
+script = ExtResource( 4 )
+
+[node name="FirePosition" type="Node2D" parent="."]
+position = Vector2( -25, 5 )
+
+[node name="FireReset" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="StaticBoostEnd" type="Timer" parent="."]
+wait_time = 0.12
+one_shot = true
+
+[node name="FireRepeater" type="Timer" parent="."]
+wait_time = 0.03
+
+[node name="BlastSfx" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 8 )
+
+[node name="FireSfx" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 9 )
+pitch_scale = 1.97
+
+[node name="BurstSfx" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 10 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 100, 0 )
+current = true
+drag_margin_v_enabled = true
+drag_margin_top = 0.6
+drag_margin_bottom = 0.3
+editor_draw_drag_margin = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DeathReset" type="Timer" parent="."]
+pause_mode = 2
+wait_time = 0.6
+one_shot = true
+
+[node name="DieSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 12 )
+volume_db = 0.803
+
+[node name="WinMusic" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 14 )
+
+[connection signal="body_entered" from="." to="." method="_on_Dragon_body_entered"]
+[connection signal="kill" from="." to="." method="_on_Dragon_kill"]
+[connection signal="win" from="." to="." method="_on_Dragon_win"]
+[connection signal="animation_finished" from="AnimationPlayer" to="AnimationPlayer" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="FireReset" to="." method="_on_FireReset_timeout"]
+[connection signal="timeout" from="StaticBoostEnd" to="." method="_on_StaticBoostEnd_timeout"]
+[connection signal="timeout" from="FireRepeater" to="." method="_on_FireRepeater_timeout"]
+[connection signal="timeout" from="DeathReset" to="." method="_on_DeathReset_timeout"]
