@@ -22,7 +22,7 @@ func _ready() -> void:
 	
 	grab_effect_bus = AudioServer.get_bus_index("grabby")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not captured or not launch_loading:
 		return
 	

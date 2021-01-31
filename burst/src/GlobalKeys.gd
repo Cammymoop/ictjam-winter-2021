@@ -5,7 +5,7 @@ var scene_root: Node = null
 func set_scene(scene) -> void:
 	scene_root = scene
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("reset"):
 		scene_root.respawn()
 	if Input.is_action_just_pressed("hard_reset"):

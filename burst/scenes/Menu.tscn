@@ -55,18 +55,24 @@ __meta__ = {
 margin_right = 69.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 0, 40 )
+focus_neighbour_right = NodePath("../Button2")
 text = "Continue"
 
 [node name="Button2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 margin_left = 73.0
 margin_right = 153.0
 margin_bottom = 40.0
+focus_neighbour_left = NodePath("../Button")
+focus_neighbour_right = NodePath("../Button3")
 text = "Easy Mode"
 
 [node name="Button3" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 margin_left = 157.0
 margin_right = 239.0
 margin_bottom = 40.0
+focus_neighbour_left = NodePath("../Button2")
+focus_neighbour_right = NodePath("../Button4")
+focus_neighbour_bottom = NodePath("../../HBoxContainer2/CheckButton")
 text = "Hard Mode"
 
 [node name="Button4" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]

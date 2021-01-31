@@ -6,8 +6,10 @@ func _ready() -> void:
 	if muted:
 		var toggle = get_node("PanelContainer/VBoxContainer/HBoxContainer2/CheckButton")
 		toggle.pressed = false
+	
+	get_node("PanelContainer/VBoxContainer/HBoxContainer/Button").grab_focus()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("menu_button"):
 		menu_close()
 

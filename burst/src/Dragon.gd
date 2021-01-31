@@ -40,7 +40,7 @@ func _ready() -> void:
 		$dragon2.visible = true
 	
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if input_enabled:
 		if Input.is_action_just_pressed("boost_2"):
 			if can_boost and can_static_boost:
@@ -127,7 +127,7 @@ func _on_StaticBoostEnd_timeout() -> void:
 	gravity_scale = 1
 
 
-func _on_Dragon_body_entered(body: Node) -> void:
+func _on_Dragon_body_entered(_body: Node) -> void:
 	if not can_static_boost:
 		can_static_boost = true
 
